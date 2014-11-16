@@ -11,7 +11,11 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import sudoku.ihm.model.data.sample.DataSample;
 
 /**
  *
@@ -20,17 +24,19 @@ import javafx.scene.control.Label;
 
 public class FXMLDocumentController implements Initializable {
     
-    @FXML
-    private Label label;
-    
-    @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
-    }
-    
+    //Data
+    public DataSample instance;
+        
+    @FXML   private Label userName;
+    @FXML   private ImageView avatar;
+    @FXML   private Button connexion;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+   /*     instance = new DataSample();
+        userName.setText(instance.a.getPseudo());
+        avatar.setImage(new Image(instance.a.getProfilePicturePath()));
+        connexion.setText("Connected");*/
     }    
 }

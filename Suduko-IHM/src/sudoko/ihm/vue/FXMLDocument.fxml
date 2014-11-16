@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" text="Suduko" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" text="Suduko" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sudoko.ihm.vue.FXMLDocumentController">
    <content>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
          <children>
@@ -51,13 +51,13 @@
                   </Tab>
                </tabs>
             </TabPane>
-            <ImageView fitHeight="61.0" fitWidth="62.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="avatar" fitHeight="61.0" fitWidth="62.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../UTC/LO23/Développement/Template%20Vide/JavaFXApplication1/linkedin.png" />
+                  <Image url="" />
                </image>
             </ImageView>
-            <Button layoutX="501.0" layoutY="18.0" mnemonicParsing="false" text="Disconnected" />
-            <Label layoutX="87.0" layoutY="58.0" text="Bienvenue UserName" />
+            <Button fx:id="connexion" layoutX="501.0" layoutY="18.0" mnemonicParsing="false" text="Disconnected" />
+            <Label id="userName" fx:id="userName" layoutX="87.0" layoutY="58.0" />
          </children>
       </AnchorPane>
    </content>
