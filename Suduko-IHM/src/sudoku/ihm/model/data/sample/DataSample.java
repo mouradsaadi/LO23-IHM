@@ -21,7 +21,7 @@ public class DataSample {
     public Grid g1,g2,g3;
     
     
-    DataSample(){
+    public DataSample(){
        //création du fake user a 
        a.setBirthdate("01/01/2001");
        a.setId(1);
