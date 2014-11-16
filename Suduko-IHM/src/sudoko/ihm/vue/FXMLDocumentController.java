@@ -65,10 +65,9 @@ public class FXMLDocumentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-   /*     instance = new DataSample();
+        instance = new DataSample();
         userName.setText(instance.a.getPseudo());
-        avatar.setImage(new Image(instance.a.getProfilePicturePath()));
-        connexion.setText("Connected");*/
+        connexion.setText("Connected");
         assert panes != null : "fx:id=\"panes\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
         assert paneUser != null : "fx:id=\"paneUser\" was not injected: check your FXML file 'FXMLDocument.fxml'.";        
         assert paneGroup != null : "fx:id=\"paneGroup\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
@@ -175,7 +174,6 @@ public class FXMLDocumentController implements Initializable {
                     paneGroup.setVisible(false);                            
             }
         });
-        
     }    
     
 }
