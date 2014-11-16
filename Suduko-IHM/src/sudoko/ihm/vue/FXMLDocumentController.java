@@ -34,9 +34,9 @@ public class FXMLDocumentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-   /*     instance = new DataSample();
+        instance = new DataSample();
         userName.setText(instance.a.getPseudo());
-        avatar.setImage(new Image(instance.a.getProfilePicturePath()));
-        connexion.setText("Connected");*/
+        //avatar.setImage(new Image(instance.a.getProfilePicturePath()));
+        connexion.setText("Connected");
     }    
 }
