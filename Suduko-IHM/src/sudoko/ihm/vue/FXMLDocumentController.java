@@ -17,6 +17,7 @@ import javafx.scene.control.Label;
  *
  * @author MOURAD
  */
+
 public class FXMLDocumentController implements Initializable {
     
     @FXML
@@ -32,5 +33,4 @@ public class FXMLDocumentController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-    
 }
