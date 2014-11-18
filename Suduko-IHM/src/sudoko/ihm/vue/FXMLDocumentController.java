@@ -6,6 +6,8 @@
 
 package sudoko.ihm.vue;
 
+import java.awt.Desktop.Action;
+import java.awt.Dialog;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.beans.value.ChangeListener;
@@ -18,8 +20,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.ImageView;
-import org.controlsfx.dialog.Dialogs;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -28,9 +28,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import sudoku.ihm.model.data.sample.DataSample;
-import org.controlsfx.control.action.Action;
-import org.controlsfx.dialog.Dialog;
-import org.controlsfx.dialog.Dialogs;
 
 /**
  *
@@ -41,7 +38,6 @@ public class FXMLDocumentController implements Initializable {
     
     //Data
     public DataSample instance;
-    public Dialogs dialog;
     @FXML
     private Button fillEmpty;
     
@@ -79,18 +75,20 @@ public class FXMLDocumentController implements Initializable {
         connexion.setText("Connected");
                 fillEmpty.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-            Dialogs.create().title("Message").masthead("Message d'information")
-                .message("Message xdxxxx")
-                .showInformation();
+               /* DialogResponse response = Dialogs.showConfirmDialog(stage, "Are you ok with this?", 
+                "Confirm Dialog With Options", "title", DialogOptions.OK_CANCEL);
+                Dialogs.create().title("Message").masthead("Message d'information")
+                    .message("Message xdxxxx")
+                    .showInformation();*/
             }
         });
         fromGrid.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {
-                            Dialogs.create()
+                 /*           Dialogs.create()
                 .title("Message")
                 .masthead("Message d'information")
                 .message("Youhou ...")
-                .showInformation();
+                .showInformation();*/
             }
         });
         assert panes != null : "fx:id=\"panes\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
@@ -121,6 +119,7 @@ public class FXMLDocumentController implements Initializable {
         });
         
         listGroups.setOnDragEntered(new EventHandler <DragEvent>() {
+            @Override
             public void handle(DragEvent event) {
                 System.out.println("yooort");
             }
@@ -130,11 +129,11 @@ public class FXMLDocumentController implements Initializable {
         //Méthode Bouton "Aller aux grilles"
         goToGrids.setOnAction(new EventHandler<ActionEvent>(){
             public void handle(ActionEvent e) {
-            Dialogs.create()
+            /*Dialogs.create()
                 .title("Message")
                 .masthead("Message d'information")
                 .message("Vous allez aux grilles de l'utilisateur: "+user.getText())
-                .showInformation();
+                .showInformation();*/
             }
         });
         
@@ -142,8 +141,9 @@ public class FXMLDocumentController implements Initializable {
         
         //Méthode Bouton "Supprimer du groupe"
         delFromGroup.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
             public void handle(ActionEvent e) {
-                Action response = Dialogs.create()
+              /*  Action response = Dialogs.create()
                     .owner(null)
                     .title("Confirm Dialog")
                     .message("Voulez-vous supprimer l'utilisateur '"+user.getText()+"' du groupe '"+nameGroup.getText()+"'?")
@@ -156,25 +156,26 @@ public class FXMLDocumentController implements Initializable {
                         .showInformation();
                 } else {
                     // ... utilisateur choisit NO, CANCEL, ou ferme le dialog
-                }
+                }*/
             }
         });
         
         //Méthode Bouton "Nouveau Groupe"
         newGroup.setOnAction(new EventHandler<ActionEvent>(){
+            @Override
             public void handle(ActionEvent e) {
-                Dialogs.create()
+              /*  Dialogs.create()
                     .title("Message")
                     .masthead("Message d'information")
                     .message("Créer un nouveau groupe ")
-                    .showInformation();
+                    .showInformation();*/
             }
         });
         
         //Méthode Bouton "Supprimer Groupe"
         delGroup.setOnAction(new EventHandler<ActionEvent>(){
             public void handle(ActionEvent e) {
-                Action response = Dialogs.create()
+              /*  Action response = Dialogs.create()
                     .owner(null)
                     .title("Confirm Dialog")
                     .message("Voulez-vous supprimer le groupe '"+nameGroup.getText()+"'?")
@@ -187,13 +188,14 @@ public class FXMLDocumentController implements Initializable {
                         .showInformation();
                 } else {
                     // ... utilisateur choisit NO, CANCEL, ou ferme le dialog
-                }
+                }*/
             }
         });
         
         //Méthode ListView Groupes -> OnClick
         listGroups.getSelectionModel().selectedItemProperty().addListener(
             new ChangeListener<String>() {
+                @Override
                 public void changed(ObservableValue<? extends String> ov, 
                     String old_val, String new_val) {
                     nombUsers.setText(listUsers.getItems().size()+" utilisateurs connectés");
