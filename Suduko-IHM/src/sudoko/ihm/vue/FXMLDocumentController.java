@@ -167,6 +167,7 @@ public class FXMLDocumentController implements Initializable {
         //Méthode ListView Utilisateurs -> OnClick
         listUsers.getSelectionModel().selectedItemProperty().addListener(
             new ChangeListener<String>() {
+                @Override
                 public void changed(ObservableValue<? extends String> ov, 
                     String old_val, String new_val) {
                     user.setText(new_val);
@@ -175,5 +176,4 @@ public class FXMLDocumentController implements Initializable {
             }
         });
     }    
-    
 }
