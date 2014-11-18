@@ -21,9 +21,25 @@
                      </content>
                   </Tab>
                   <Tab text="Création Grille">
-                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                     </content>
+                <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <children>
+                  <VBox cacheShape="false" layoutX="2.0" layoutY="-1.0" prefHeight="376.0" prefWidth="600.0">
+                     <children>
+                        <Pane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="fillEmpty" cacheShape="false" contentDisplay="TOP" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" opacity="0.5" prefHeight="76.0" prefWidth="567.0" text="Remplir une grille vide">
+                                </Button>
+                              <Button fx:id="fromGrid" layoutX="14.0" layoutY="94.0" mnemonicParsing="false" opacity="0.5" prefHeight="84.0" prefWidth="567.0" text="A partir d'une grille existante">
+                                  
+                              </Button>
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="200.0" prefWidth="200.0" />
+                     </children>
+                  </VBox>
+               </children></AnchorPane>
+                </content>
                   </Tab>
                   <Tab text="Liste Grilles">
                      <content>
