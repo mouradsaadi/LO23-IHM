@@ -113,67 +113,81 @@ public class FXMLDocumentController implements Initializable {
         listGroups.setItems(groups);
         listUsers.setItems(users);
         
-        listUsers.setOnDragDetected((MouseEvent event) -> {
-            System.out.println("yuurt");
+        listUsers.setOnDragDetected(new EventHandler <MouseEvent>() {
+            @Override
+            public void handle(MouseEvent event) {
+                System.out.println("yuurt");
+            }
         });
         
-        listGroups.setOnDragEntered((DragEvent event) -> {
-            System.out.println("aaaa");
+        listGroups.setOnDragEntered(new EventHandler <DragEvent>() {
+            public void handle(DragEvent event) {
+                System.out.println("yooort");
+            }
         });
+
         
         //Méthode Bouton "Aller aux grilles"
-        goToGrids.setOnAction((ActionEvent event) -> {
+        goToGrids.setOnAction(new EventHandler<ActionEvent>(){
+            public void handle(ActionEvent e) {
             Dialogs.create()
                 .title("Message")
                 .masthead("Message d'information")
                 .message("Vous allez aux grilles de l'utilisateur: "+user.getText())
                 .showInformation();
+            }
         });
         
         delFromGroup.setOnAction(null);
         
         //Méthode Bouton "Supprimer du groupe"
-        delFromGroup.setOnAction((ActionEvent event) -> {
-            Action response = Dialogs.create()
-                .owner(null)
-                .title("Confirm Dialog")
-                .message("Voulez-vous supprimer l'utilisateur '"+user.getText()+"' du groupe '"+nameGroup.getText()+"'?")
-                .showConfirm();
+        delFromGroup.setOnAction(new EventHandler<ActionEvent>(){
+            public void handle(ActionEvent e) {
+                Action response = Dialogs.create()
+                    .owner(null)
+                    .title("Confirm Dialog")
+                    .message("Voulez-vous supprimer l'utilisateur '"+user.getText()+"' du groupe '"+nameGroup.getText()+"'?")
+                    .showConfirm();
 
-            if (response == Dialog.ACTION_YES) {
-                Dialogs.create()
-                    .title("Message")
-                    .message("L'utilisateur '"+user.getText()+"' sera supprimé")
-                    .showInformation();
-            } else {
-                // ... utilisateur choisit NO, CANCEL, ou ferme le dialog
+                if (response == Dialog.ACTION_YES) {
+                    Dialogs.create()
+                        .title("Message")
+                        .message("L'utilisateur '"+user.getText()+"' sera supprimé")
+                        .showInformation();
+                } else {
+                    // ... utilisateur choisit NO, CANCEL, ou ferme le dialog
+                }
             }
         });
         
         //Méthode Bouton "Nouveau Groupe"
-        newGroup.setOnAction((ActionEvent event) -> {
-            Dialogs.create()
-                .title("Message")
-                .masthead("Message d'information")
-                .message("Créer un nouveau groupe ")
-                .showInformation();
+        newGroup.setOnAction(new EventHandler<ActionEvent>(){
+            public void handle(ActionEvent e) {
+                Dialogs.create()
+                    .title("Message")
+                    .masthead("Message d'information")
+                    .message("Créer un nouveau groupe ")
+                    .showInformation();
+            }
         });
         
         //Méthode Bouton "Supprimer Groupe"
-        delGroup.setOnAction((ActionEvent event) -> {
-            Action response = Dialogs.create()
-                .owner(null)
-                .title("Confirm Dialog")
-                .message("Voulez-vous supprimer le groupe '"+nameGroup.getText()+"'?")
-                .showConfirm();
+        delGroup.setOnAction(new EventHandler<ActionEvent>(){
+            public void handle(ActionEvent e) {
+                Action response = Dialogs.create()
+                    .owner(null)
+                    .title("Confirm Dialog")
+                    .message("Voulez-vous supprimer le groupe '"+nameGroup.getText()+"'?")
+                    .showConfirm();
 
-            if (response == Dialog.ACTION_YES) {
-                Dialogs.create()
-                    .title("Message")
-                    .message("Le groupe '"+nameGroup.getText()+"' sera supprimé")
-                    .showInformation();
-            } else {
-                // ... utilisateur choisit NO, CANCEL, ou ferme le dialog
+                if (response == Dialog.ACTION_YES) {
+                    Dialogs.create()
+                        .title("Message")
+                        .message("Le groupe '"+nameGroup.getText()+"' sera supprimé")
+                        .showInformation();
+                } else {
+                    // ... utilisateur choisit NO, CANCEL, ou ferme le dialog
+                }
             }
         });
         
