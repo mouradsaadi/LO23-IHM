@@ -1,4 +1,10 @@
-package sudoku_ihm.vue;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+package sudoko.ihm.vue;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -23,7 +29,7 @@ import sudoku.ihm.model.data.sample.DataSample;
  *
  * @author MOURAD
  */
-public class FXMLDocumentController implements Initializable {
+public class FXMLDocumentController implements Initializable, ControlledScreen {
     
     //Data
     public DataSample instance;
@@ -33,6 +39,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML   private Button connexion;
     
     // Partie JulianC
+    ScreensController myController;
     @FXML   private StackPane panes;
     @FXML   private Pane paneUser;
     @FXML   private Pane paneGroup;
@@ -56,8 +63,8 @@ public class FXMLDocumentController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         instance = new DataSample();
-        userName.setText(instance.a.getPseudo());
-        connexion.setText("Connected");
+        userName.setText("Utilisateur: "+instance.a.getPseudo());
+        
         assert panes != null : "fx:id=\"panes\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
         assert paneUser != null : "fx:id=\"paneUser\" was not injected: check your FXML file 'FXMLDocument.fxml'.";        
         assert paneGroup != null : "fx:id=\"paneGroup\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
@@ -168,5 +175,15 @@ public class FXMLDocumentController implements Initializable {
             }
         });
     }    
+
+    @Override
+    public void setScreenParents(ScreensController screenParent) {
+        myController = screenParent;
+    }
+    
+    @FXML
+    private void goToLogin(ActionEvent event) {
+        myController.setScreen(SudukoIHM.loginID);
+    }   
     
 }
