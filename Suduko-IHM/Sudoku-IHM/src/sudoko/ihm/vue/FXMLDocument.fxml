@@ -22,7 +22,23 @@
                   </Tab>
                   <Tab text="Création Grille">
                      <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox layoutY="-1.0" prefHeight="610.0" prefWidth="1079.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Pane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <Button fx:id="fillGrid" layoutY="1.0" mnemonicParsing="false" prefHeight="254.0" prefWidth="756.0" text="Créer à partir d'une grille vide" />
+                                       </children>
+                                    </Pane>
+                                    <Pane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <Button fx:id="fromFullGrid" layoutY="60.0" mnemonicParsing="false" prefHeight="249.0" prefWidth="758.0" text="Créer à partir d'une grille aléatoire" />
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
                      </content>
                   </Tab>
                   <Tab text="Liste Grilles">

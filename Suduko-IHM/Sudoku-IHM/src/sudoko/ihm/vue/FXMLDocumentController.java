@@ -43,6 +43,8 @@ public class FXMLDocumentController implements Initializable, ControlledScreen {
     @FXML   private StackPane panes;
     @FXML   private Pane paneUser;
     @FXML   private Pane paneGroup;
+    @FXML   private Button fillGrid;
+    @FXML   private Button fromFullGrid;
     @FXML   private ListView listGroups;
     @FXML   private ListView listUsers;
     @FXML   private Label user;
@@ -66,6 +68,8 @@ public class FXMLDocumentController implements Initializable, ControlledScreen {
         userName.setText("Utilisateur: "+instance.a.getPseudo());
         
         assert panes != null : "fx:id=\"panes\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
+        assert fillGrid != null : "fx:id=\"fillGrid\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
+        assert fromFullGrid != null : "fx:id=\"fromFullGrid\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
         assert paneUser != null : "fx:id=\"paneUser\" was not injected: check your FXML file 'FXMLDocument.fxml'.";        
         assert paneGroup != null : "fx:id=\"paneGroup\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
         assert listGroups != null : "fx:id=\"listGroups\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
@@ -84,7 +88,13 @@ public class FXMLDocumentController implements Initializable, ControlledScreen {
         users.addAll("julian", "user2", "user3");        
         listGroups.setItems(groups);
         listUsers.setItems(users);
+        fillGrid.setOnAction(new EventHandler<ActionEvent>(){
+            @Override public void handle(ActionEvent e){
+                //return new tab or popup with empty grid to fill
+                IhmGridEditor emptyEditor= IHMGrid.getInstance().CreateGrid(true);
                 
+            }
+        });
         //Méthode Bouton "Aller aux grilles"
         goToGrids.setOnAction(new EventHandler<ActionEvent>(){
             @Override public void handle(ActionEvent e){   
@@ -187,3 +197,4 @@ public class FXMLDocumentController implements Initializable, ControlledScreen {
     }   
     
 }
+
