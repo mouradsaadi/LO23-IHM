@@ -63,7 +63,7 @@ public class FXMLDocumentController implements Initializable, ControlledScreen {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         instance = new DataSample();
-        userName.setText("Utilisateur: "+instance.a.getPseudo());
+        userName.setText("Utilisateur : "+instance.a.getPseudo());
         
         assert panes != null : "fx:id=\"panes\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
         assert paneUser != null : "fx:id=\"paneUser\" was not injected: check your FXML file 'FXMLDocument.fxml'.";        
