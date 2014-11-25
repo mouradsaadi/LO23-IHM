@@ -28,12 +28,12 @@
                                  <children>
                                     <Pane prefHeight="200.0" prefWidth="200.0">
                                        <children>
-                                          <Button fx:id="fillGrid" layoutY="1.0" mnemonicParsing="false" prefHeight="254.0" prefWidth="756.0" text="Créer à partir d'une grille vide" />
+                                          <Button fx:id="fillGrid" layoutY="1.0" mnemonicParsing="false" onAction="#goToFillGrid" prefHeight="254.0" prefWidth="756.0" text="Créer à partir d'une grille vide" />
                                        </children>
                                     </Pane>
                                     <Pane prefHeight="200.0" prefWidth="200.0">
                                        <children>
-                                          <Button fx:id="fromFullGrid" layoutY="60.0" mnemonicParsing="false" prefHeight="249.0" prefWidth="758.0" text="Créer à partir d'une grille aléatoire" />
+                                          <Button fx:id="fromFullGrid" layoutY="60.0" mnemonicParsing="false" onAction="#goToFromFullGrid" prefHeight="249.0" prefWidth="758.0" text="Créer à partir d'une grille aléatoire" />
                                        </children>
                                     </Pane>
                                  </children>

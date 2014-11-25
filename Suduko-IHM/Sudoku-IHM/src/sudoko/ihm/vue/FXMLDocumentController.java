@@ -88,13 +88,6 @@ public class FXMLDocumentController implements Initializable, ControlledScreen {
         users.addAll("julian", "user2", "user3");        
         listGroups.setItems(groups);
         listUsers.setItems(users);
-        fillGrid.setOnAction(new EventHandler<ActionEvent>(){
-            @Override public void handle(ActionEvent e){
-                //return new tab or popup with empty grid to fill
-                IhmGridEditor emptyEditor= IHMGrid.getInstance().CreateGrid(true);
-                
-            }
-        });
         //Méthode Bouton "Aller aux grilles"
         goToGrids.setOnAction(new EventHandler<ActionEvent>(){
             @Override public void handle(ActionEvent e){   
@@ -185,7 +178,7 @@ public class FXMLDocumentController implements Initializable, ControlledScreen {
             }
         });
     }    
-
+    
     @Override
     public void setScreenParents(ScreensController screenParent) {
         myController = screenParent;
@@ -195,6 +188,13 @@ public class FXMLDocumentController implements Initializable, ControlledScreen {
     private void goToLogin(ActionEvent event) {
         myController.setScreen(SudukoIHM.loginID);
     }   
-    
+    @FXML
+    private void goToFillGrid(ActionEvent event) {
+        myController.setScreen(SudukoIHM.fillGridID);
+    } 
+    @FXML
+    private void goToFromFullGrid(ActionEvent event) {
+        myController.setScreen(SudukoIHM.fromFullGridID);
+    }  
 }
 
