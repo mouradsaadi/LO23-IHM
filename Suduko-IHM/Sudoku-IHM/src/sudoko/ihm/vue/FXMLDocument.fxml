@@ -17,7 +17,77 @@
                <tabs>
                   <Tab style="backgound-color: red;" text="Accueil">
                      <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <HBox layoutX="39.0" layoutY="37.0" prefHeight="185.0" prefWidth="1010.0">
+                                 <children>
+                                    <HBox prefHeight="100.0" prefWidth="505.0">
+                                       <children>
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <ImageView fitHeight="200.0" fitWidth="200.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@sudoku.jpg" />
+                                                   </image>
+                                                </ImageView>
+                                             </children></Pane>
+                                          <VBox prefHeight="200.0" prefWidth="305.0">
+                                             <children>
+                                                <Label id="userName" fx:id="userName1" alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="69.0" text="Nom :" textAlignment="RIGHT">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="50.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label id="userName" fx:id="userName11" alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="69.0" text="Note :" textAlignment="RIGHT">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="45.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                             </children></VBox>
+                                       </children>
+                                    </HBox>
+                                    <HBox prefHeight="100.0" prefWidth="505.0">
+                                       <children>
+                                          <Pane prefHeight="200.0" prefWidth="200.0">
+                                             <children>
+                                                <ImageView fitHeight="200.0" fitWidth="200.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@sudoku.jpg" />
+                                                   </image>
+                                                </ImageView>
+                                             </children>
+                                          </Pane>
+                                          <VBox prefHeight="200.0" prefWidth="305.0">
+                                             <children>
+                                                <Label id="userName" fx:id="userName111" alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="69.0" text="Note :" textAlignment="RIGHT">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="50.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                                <Label id="userName" fx:id="userName12" alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="69.0" text="Nom :" textAlignment="RIGHT">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="45.0" />
+                                                   </VBox.margin>
+                                                </Label>
+                                             </children></VBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </HBox>
+                              <Separator layoutX="31.0" layoutY="250.0" prefHeight="8.0" prefWidth="1017.0" />
+                           </children></AnchorPane>
                      </content>
                   </Tab>
                   <Tab text="Création Grille">
@@ -204,7 +274,7 @@
                </image>
             </ImageView>
             <Button fx:id="connexion" layoutX="905.0" layoutY="16.0" mnemonicParsing="false" onAction="#goToLogin" text="Déconnexion" />
-            <Label id="userName" fx:id="userName" alignment="CENTER_RIGHT" layoutX="680.0" layoutY="21.0" prefHeight="21.0" prefWidth="180.0" text="Utilisateur: " textAlignment="RIGHT">
+            <Label id="userName" fx:id="userName" alignment="CENTER_RIGHT" layoutX="680.0" layoutY="21.0" prefHeight="21.0" prefWidth="180.0" text="Utilisateur : " textAlignment="RIGHT">
                <font>
                   <Font size="15.0" />
                </font></Label>
