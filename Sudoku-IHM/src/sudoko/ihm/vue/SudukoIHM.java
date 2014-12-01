@@ -25,6 +25,10 @@ public class SudukoIHM extends Application {
     public static String registerFile = "Register.fxml";
     public static String programID = "program";
     public static String programFile = "FXMLDocument.fxml";
+    public static String fillGridID = "FillAndCreate";
+    public static String fillGridFile = "FillAndCreate.fxml";
+    public static String fromFullGridID = "FromFullGrid";
+    public static String fromFullGridFile = "FromFullGrid.fxml";
     
     private ImageView avatar;
     private Image image;
@@ -40,6 +44,8 @@ public class SudukoIHM extends Application {
         mainContainer.loadScreen(SudukoIHM.loginID, SudukoIHM.loginFile);
         mainContainer.loadScreen(SudukoIHM.registerID, SudukoIHM.registerFile);
         mainContainer.loadScreen(SudukoIHM.programID, SudukoIHM.programFile);
+        mainContainer.loadScreen(SudukoIHM.fillGridID, SudukoIHM.fillGridFile);
+        mainContainer.loadScreen(SudukoIHM.fromFullGridID, SudukoIHM.fromFullGridFile);
         mainContainer.setScreen(SudukoIHM.loginID);
         Group root = new Group();
         root.getChildren().addAll(mainContainer);        

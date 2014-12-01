@@ -11,38 +11,25 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 
 /**
  *
  * @author MOURAD
  */
-public class RegisterController implements Initializable, ControlledScreen {
+public class FromFullGridController implements Initializable, ControlledScreen {
     
+    @FXML   private Pane fromFullPane;
     // Partie JulianC
     ScreensController myController;    
-    
-    @FXML   private TextField user;
-    @FXML   private PasswordField passwd;
-    @FXML   private TextField nom;
-    @FXML   private TextField prenom;
-    @FXML   private Button login;
-    @FXML   private Button register;
-    
+
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO        
-    }    
-    
-    private void clean(){
-        user.setText(null);
-        passwd.setText(null);
-        nom.setText(null);
-        prenom.setText(null);
-    }
+        //IhmGridEditor editor = IhmGrid.getInstance().createGrid(true);
+        //add editor to fromFullPane
+    }      
+
 
     @Override
     public void setScreenParents(ScreensController screenParent) {
@@ -50,14 +37,8 @@ public class RegisterController implements Initializable, ControlledScreen {
     }
     
     @FXML
-    private void goToProgram(ActionEvent event) {        
-        clean();
+    private void goToProgram(ActionEvent event) {   
+        System.out.println("Ca clique bordel ???");
         myController.setScreen(SudukoIHM.programID);                
-    }   
-    
-    @FXML
-    private void goToLogin(ActionEvent event) {
-        myController.setScreen(SudukoIHM.loginID);
-    }   
-    
+    }    
 }

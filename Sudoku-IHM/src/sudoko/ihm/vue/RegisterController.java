@@ -12,8 +12,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 
 /**
  *
@@ -28,8 +30,8 @@ public class RegisterController implements Initializable, ControlledScreen {
     @FXML   private PasswordField passwd;
     @FXML   private TextField nom;
     @FXML   private TextField prenom;
-    @FXML   private Button login;
-    @FXML   private Button register;
+    @FXML   private ImageView avatar;
+    @FXML   private Label userName;
     
 
     @Override
@@ -55,9 +57,12 @@ public class RegisterController implements Initializable, ControlledScreen {
         myController.setScreen(SudukoIHM.programID);                
     }   
     
-    @FXML
     private void goToLogin(ActionEvent event) {
         myController.setScreen(SudukoIHM.loginID);
     }   
+
+    @FXML
+    private void goToCreateTab(ActionEvent event) {
+    }
     
 }
