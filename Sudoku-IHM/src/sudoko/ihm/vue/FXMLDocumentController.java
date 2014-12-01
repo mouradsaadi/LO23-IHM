@@ -43,6 +43,8 @@ public class FXMLDocumentController implements Initializable, ControlledScreen {
     @FXML   private StackPane panes;
     @FXML   private Pane paneUser;
     @FXML   private Pane paneGroup;
+    @FXML   private Button fillGrid;
+    @FXML   private Button fromFullGrid;
     @FXML   private ListView listGroups;
     @FXML   private ListView listUsers;
     @FXML   private Label user;
@@ -63,9 +65,11 @@ public class FXMLDocumentController implements Initializable, ControlledScreen {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         instance = new DataSample();
-        userName.setText("Utilisateur: "+instance.a.getPseudo());
+        userName.setText("Utilisateur : "+instance.a.getPseudo());
         
         assert panes != null : "fx:id=\"panes\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
+        assert fillGrid != null : "fx:id=\"fillGrid\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
+        assert fromFullGrid != null : "fx:id=\"fromFullGrid\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
         assert paneUser != null : "fx:id=\"paneUser\" was not injected: check your FXML file 'FXMLDocument.fxml'.";        
         assert paneGroup != null : "fx:id=\"paneGroup\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
         assert listGroups != null : "fx:id=\"listGroups\" was not injected: check your FXML file 'FXMLDocument.fxml'.";
@@ -84,7 +88,6 @@ public class FXMLDocumentController implements Initializable, ControlledScreen {
         users.addAll("julian", "user2", "user3");        
         listGroups.setItems(groups);
         listUsers.setItems(users);
-                
         //Méthode Bouton "Aller aux grilles"
         goToGrids.setOnAction(new EventHandler<ActionEvent>(){
             @Override public void handle(ActionEvent e){   
@@ -175,7 +178,7 @@ public class FXMLDocumentController implements Initializable, ControlledScreen {
             }
         });
     }    
-
+    
     @Override
     public void setScreenParents(ScreensController screenParent) {
         myController = screenParent;
@@ -185,5 +188,13 @@ public class FXMLDocumentController implements Initializable, ControlledScreen {
     private void goToLogin(ActionEvent event) {
         myController.setScreen(SudukoIHM.loginID);
     }   
-    
+    @FXML
+    private void goToFillGrid(ActionEvent event) {
+        myController.setScreen(SudukoIHM.fillGridID);
+    } 
+    @FXML
+    private void goToFromFullGrid(ActionEvent event) {
+        myController.setScreen(SudukoIHM.fromFullGridID);
+    }  
 }
+
